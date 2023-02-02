@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using SuperMaxim.Messaging;
 using UnityEngine;
 
 namespace Animation
@@ -10,7 +12,7 @@ namespace Animation
         struct Animation
         {
             public string name;
-            public ReplacementFrame parent;
+            public Transform parent;
         }
 
         [SerializeField] private Animation[] animations;
@@ -33,9 +35,21 @@ namespace Animation
                 foreach (var frame in _frames[anim.name])
                     frame.TurnOff();
             }
+
+            ChangeAnim(_frames.Keys.First());
         }
 
-        public void Tick()
+        private void OnEnable()
+        {
+            Messenger.Default.Subscribe<TickEvent>(Tick);
+        }
+
+        private void OnDisable()
+        {
+            Messenger.Default.Unsubscribe<TickEvent>(Tick);
+        }
+
+        public void Tick(TickEvent tickEvent)
         {
             _frames[_currAnimation][_currFrame].TurnOff();
             _currFrame = (_currFrame + 1) % _ttlFrames;
