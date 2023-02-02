@@ -22,6 +22,7 @@ namespace Animation
         private string _currAnimation;
         private int _currFrame;
         private int _ttlFrames;
+        private ReplacementFrame.FrameResult _lastFrameResult;
 
 
         private void Start()
@@ -37,11 +38,14 @@ namespace Animation
 
         public void Tick()
         {
-            _frames[_currAnimation][_currFrame].TurnOff();
-            _currFrame = (_currFrame + 1) % _ttlFrames;
-            var offset = _frames[_currAnimation][_currFrame].TurnOn();
+            if (!_lastFrameResult.hold)
+            {
+                _frames[_currAnimation][_currFrame].TurnOff();
+                _currFrame = (_currFrame + 1) % _ttlFrames;
+            }
+            _lastFrameResult = _frames[_currAnimation][_currFrame].TurnOn();
             if (controlledTransform != null)
-                controlledTransform.transform.localPosition += offset * Speed;
+                controlledTransform.transform.localPosition += _lastFrameResult.offset * Speed;
         }
 
         //TODO: add "bool immediate" argument to enable non-immediate transitions
