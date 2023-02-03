@@ -5,8 +5,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
-    [field: SerializeField] public Transform YamsParent { get; }
-    [field: SerializeField] public Transform VinesParent { get; }
+    [SerializeField] public Transform yamsParent;
+    [SerializeField] public Transform vinesParent;
 
     private void Awake()
     {
