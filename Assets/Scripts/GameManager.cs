@@ -2,6 +2,7 @@ using System;
 using Events;
 using SuperMaxim.Messaging;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Yams;
 
 [DefaultExecutionOrder(-1)]
@@ -42,6 +43,11 @@ public class GameManager : MonoBehaviour
         if (GetRemainingTime() <= 0)
         {
             Messenger.Default.Publish(new GameOverEvent());
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 

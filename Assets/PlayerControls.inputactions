@@ -148,6 +148,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f8646f30-c4f9-451e-85dc-09a5b336226d",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e1f03072-6672-48db-8934-68f768f94ecc",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -172,6 +183,17 @@
                     "name": "",
                     "id": "827e491c-642c-4515-af07-a6697eaeab3e",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Whack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d3bbd39f-85d8-4a77-9e23-902c1ff7bff5",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
