@@ -491,6 +491,9 @@ MonoBehaviour:
   animations:
   - name: animationasdfa
     parent: {fileID: 1274399019}
+    loop: 0
+    notifyOnEnd: 0
+    nextAnimName: 
   controlledTransform: {fileID: 299382153}
 --- !u!4 &299382153
 Transform:
@@ -506,6 +509,37 @@ Transform:
   m_Children:
   - {fileID: 1274399019}
   m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &637329583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637329584}
+  m_Layer: 0
+  m_Name: HitCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &637329584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637329583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1715737366}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
@@ -1837,3 +1871,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1
   _animator: {fileID: 0}
+--- !u!4 &1715737366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e9e98058bbef3864fb8c795ead93c1ea, type: 3}
+  m_PrefabInstance: {fileID: 1343028535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1715737367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715737356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7659af07bb49745921c014f72d2391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1715737357}
+  _timeFromPressToHit: 0
+  _hitCenter: {fileID: 637329584}
+  _hitRadius: 1
+  _yamsLayerMask:
+    serializedVersion: 2
+    m_Bits: 0

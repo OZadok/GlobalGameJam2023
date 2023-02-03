@@ -28,7 +28,7 @@ public class Hitter : MonoBehaviour
 
     private void OnWhack(InputValue value)
     {
-        if (value.isPressed)
+        if (value.isPressed && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
         {
             _animator.SetTrigger(Hit);
             Invoke(nameof(CalculateHit), _timeFromPressToHit);
