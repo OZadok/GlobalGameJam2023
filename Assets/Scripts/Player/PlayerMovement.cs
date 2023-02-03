@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
         var normMove = Quaternion.FromToRotation(transform.forward, Vector3.forward) * move;
         var signAngle = Vector3.SignedAngle(Vector3.forward, normMove, Vector3.up); 
-        _turnAmount = signAngle <= 0.1f? 0 : Mathf.Sign(signAngle); //Vector3.Project(move, transform.right).magnitude;//Mathf.Atan2(move.x, move.z);
+        _turnAmount = Mathf.Abs(signAngle) <= 0.1f? 0 : Mathf.Sign(signAngle); //Vector3.Project(move, transform.right).magnitude;//Mathf.Atan2(move.x, move.z);
         _forwardAmount = Mathf.Abs(signAngle) <= 90 ? Mathf.Abs(normMove.z) : 0;//Vector3.Project(move, transform.forward).magnitude;
 
         
