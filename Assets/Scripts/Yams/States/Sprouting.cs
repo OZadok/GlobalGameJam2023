@@ -1,11 +1,20 @@
+using UnityEngine;
+
 namespace Yams
 {
     public class Sprouting : YamState
     {
-        
-        public Sprouting(YamStateManager manager) : base(manager)
+        [SerializeField]
+        public struct SproutingStateSettings
         {
-            // pass sprouting initialization specific args here.
+            public float timeToSprout; 
+        }
+
+        private SproutingStateSettings _settings; 
+
+        public Sprouting(YamStateManager manager, SproutingStateSettings settings) : base(manager)
+        {
+            _settings = settings;
         }
         
         public override void Enter()

@@ -1,11 +1,22 @@
+using UnityEngine;
+
 namespace Yams
 {
     public class Rooted : YamState
     {
         
-        public Rooted(YamStateManager manager) : base(manager)
+        [SerializeField]
+        public struct RootedStateSettings
         {
-            // pass rooted initialization specific args here.
+            public float timeToBecomeVine;
+            public GameObject vinePrefab;
+        }
+
+        private RootedStateSettings _settings;
+        
+        public Rooted(YamStateManager manager, RootedStateSettings settings) : base(manager)
+        {
+            _settings = settings;
         }
         
         public override void Enter()

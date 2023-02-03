@@ -1,10 +1,21 @@
+using UnityEngine;
+
 namespace Yams
 {
     public class Alive : YamState
     {
-        public Alive(YamStateManager manager) : base(manager)
+        
+        [SerializeField]
+        public struct AliveStateSettings
         {
-            // pass alive initialization specific args here.
+            public float speed;
+        }
+
+        private AliveStateSettings _settings;
+        
+        public Alive(YamStateManager manager, AliveStateSettings settings) : base(manager)
+        {
+            _settings = settings;
         }
 
         public override void Enter()
