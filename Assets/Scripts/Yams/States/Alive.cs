@@ -39,6 +39,12 @@ namespace Yams
 
         public void OnTick(TickEvent tickEvent)
         {
+            RotationHandler(tickEvent.DeltaTime);
+            OutOfBoundCheck();
+        }
+
+        private void RotationHandler(float deltaTime)
+        {
             var managerTransform = manager.transform;
             var position = managerTransform.position;
             var forward = managerTransform.forward;
@@ -50,13 +56,24 @@ namespace Yams
             var rotationSpeed = new Vector3(0, 90, 0);
             if (forwardRightCollision || forwardCollision)
             {
-                manager.transform.Rotate(-rotationSpeed * tickEvent.DeltaTime);
+                manager.transform.Rotate(-rotationSpeed * deltaTime);
             }
             else if (forwardLeftCollision)
             {
-                manager.transform.Rotate(rotationSpeed * tickEvent.DeltaTime);
+                manager.transform.Rotate(rotationSpeed * deltaTime);
             }
         }
+
+        private void OutOfBoundCheck()
+        {
+            if (GameManager.Instance.GardenBedCollider.bounds.Contains(manager.transform.position))
+            {
+                return;
+            }
+
+            _yamStateName = YamStateName.Escaped;
+        }
+        
         // public override void FixedUpdate()
         // {
         //     base.FixedUpdate();
@@ -87,7 +104,7 @@ namespace Yams
 
         private void OnHit(YamHitEvent yamHitEvent)
         {
-            if (manager.Collider == yamHitEvent.Collider)
+            if (manager.Collider == yamHitEvent.Collider && _yamStateName == YamStateName.Alive)
             {
                 // change state to Rooted
                 _yamStateName = YamStateName.Rooted;
