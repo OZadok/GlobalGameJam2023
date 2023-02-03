@@ -4,7 +4,7 @@ namespace Yams
     {
         public Escaped(YamStateManager manager) : base(manager) { }
         
-        public override void Enter()
+        public override void Enter(YamStateName prevState)
         {
             throw new System.NotImplementedException();
         }

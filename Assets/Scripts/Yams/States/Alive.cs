@@ -19,7 +19,7 @@ namespace Yams
             _settings = settings;
         }
 
-        public override void Enter()
+        public override void Enter(YamStateName prevState)
         {
             manager.Anim.ChangeAnim("Walk");
         }

@@ -21,7 +21,7 @@ namespace Yams.States
             _settings = settings;
         }
         
-        public override void Enter()
+        public override void Enter(YamStateName prevState)
         {
             timeSinceRooted = 0f;
             manager.Anim.ChangeAnim("Rooted");
