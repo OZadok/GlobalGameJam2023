@@ -6,17 +6,16 @@ namespace Yams
         
         public override void Enter(YamStateName prevState)
         {
-            throw new System.NotImplementedException();
+            manager.Anim.ChangeAnim("Climb");
         }
 
         public override YamStateName Update()
         {
-            throw new System.NotImplementedException();
+            return YamStateName.Escaped;
         }
 
         public override void Exit()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

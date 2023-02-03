@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Vine vinePrefab;
     [SerializeField] public YamStateManager yamPrefab;
 
+    [SerializeField] public Collider GardenBedCollider;
+
 
     private void Awake()
     {
