@@ -10,7 +10,6 @@ namespace Yams.States
         public struct RootedStateSettings
         {
             public float timeToBecomeVine;
-            public GameObject vinePrefab;
         }
         
         private RootedStateSettings _settings;
@@ -42,7 +41,7 @@ namespace Yams.States
 
         private void InstantiateVine()
         {
-            UnityEngine.Object.Instantiate(_settings.vinePrefab, manager.transform.position, Quaternion.identity);
+            UnityEngine.Object.Instantiate(GameManager.Instance.vinesParent, manager.transform.position, Quaternion.identity);
         }
 
         public override void Exit()
