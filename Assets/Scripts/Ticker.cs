@@ -11,6 +11,7 @@ public class Ticker : MonoBehaviour
     private void Awake()
     {
         _nextTickTime = GetTime() + TimeBetweenTicks;
+        _tickEvent.DeltaTime = TimeBetweenTicks;
     }
 
     private void Update()
@@ -21,6 +22,7 @@ public class Ticker : MonoBehaviour
         {
             _nextTickTime += TimeBetweenTicks;
             Tick();
+            _tickEvent.DeltaTime = TimeBetweenTicks;
         }
     }
 
