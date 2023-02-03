@@ -1,5 +1,7 @@
 using UnityEngine;
+using Yams;
 
+[DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
 {
 
@@ -7,10 +9,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public Transform yamsParent;
     [SerializeField] public Transform vinesParent;
+    [SerializeField] private Vine vinePrefab;
+    [SerializeField] public YamStateManager yamPrefab;
+
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance == null)
             Instance = this;
 
         else

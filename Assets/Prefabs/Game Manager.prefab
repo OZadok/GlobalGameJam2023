@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yamsParent: {fileID: 0}
   vinesParent: {fileID: 0}
+  vinePrefab: {fileID: 722393816538373927, guid: 7cf16a069ab7f4c078075fba05fddfee, type: 3}
+  yamPrefab: {fileID: 7352764293283463603, guid: cb253cbebb9124c21befc32cd810935c, type: 3}
