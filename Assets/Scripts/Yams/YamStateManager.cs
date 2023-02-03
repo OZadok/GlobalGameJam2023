@@ -12,9 +12,11 @@ namespace Yams
         [SerializeField] private Sprouting.SproutingStateSettings _sproutingSettings;
         [SerializeField] private Alive.AliveStateSettings _aliveSettings;
         [SerializeField] private Rooted.RootedStateSettings _rootedSettings;
+        [SerializeField] private Idle.IdleStateSettings _idleSettings;
         [SerializeField] private ReplacementAnimator _anim;
 
-        private YamState _currentState;
+        private YamState.YamStateName _currentStateName;
+        private YamState CurrentState => _states[_currentStateName];
         
         public ReplacementAnimator Anim => _anim;
 
@@ -26,27 +28,28 @@ namespace Yams
                 {YamState.YamStateName.Sprouting, new Sprouting(this, _sproutingSettings)},
                 {YamState.YamStateName.Rooted, new Rooted(this, _rootedSettings)},
                 {YamState.YamStateName.Escaped, new Escaped(this)},
+                {YamState.YamStateName.Idle, new Idle(this, _idleSettings)},
             };
 
-            _currentState = _states[YamState.YamStateName.Sprouting];
-            _currentState.Enter();
+            _currentStateName = YamState.YamStateName.Sprouting;
+            CurrentState.Enter(YamState.YamStateName.None);
         }
 
         private void Update()
         {
-            var newStateName = _currentState.Update();
+            var newStateName = CurrentState.Update();
             
-            if (_states[newStateName] != _currentState)
+            if (_states[newStateName] != CurrentState)
             {
-                Debug.Log($"{_currentState.GetType()} ======> {_states[newStateName].GetType()}");
-                _currentState.Exit();
+                Debug.Log($"{_currentStateName.GetType()} ======> {_states[newStateName].GetType()}");
+                CurrentState.Exit();
                 if (newStateName == YamState.YamStateName.Destroyed)
                 {
                     Destroy(this.gameObject);
                     return;
                 }
-                _currentState = _states[newStateName];
-                _currentState.Enter();
+                CurrentState.Enter(_currentStateName);
+                _currentStateName = newStateName;
             }
         }
     }

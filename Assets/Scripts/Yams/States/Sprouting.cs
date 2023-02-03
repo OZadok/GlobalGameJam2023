@@ -19,7 +19,7 @@ namespace Yams
             _settings = settings;
         }
         
-        public override void Enter()
+        public override void Enter(YamStateName prevState)
         {
             timeSinceSprouted = 0f;
             manager.Anim.ChangeAnim("Sprout");
@@ -41,5 +41,6 @@ namespace Yams
         {
             
         }
+
     }
 }

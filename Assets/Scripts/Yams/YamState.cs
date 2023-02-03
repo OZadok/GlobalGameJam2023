@@ -10,6 +10,7 @@ namespace Yams
             Alive = 2, 
             Rooted = 3,
             Escaped = 4,
+            Idle = 5,
             Destroyed = 10,
         }
 
@@ -20,7 +21,7 @@ namespace Yams
             this.manager = manager;
         }
 
-        public abstract void Enter();
+        public abstract void Enter(YamStateName prevState);
         
         public abstract YamStateName Update();
         
