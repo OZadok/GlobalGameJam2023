@@ -112,7 +112,6 @@ namespace Animation
             if (_frameToTurnOff != null)
             {
                 _frameToTurnOff.TurnOff();
-                _frameToTurnOff.ResetHold();
                 _frameToTurnOff = null;
             }
             
@@ -138,8 +137,11 @@ namespace Animation
             Debug.Log($"Starting animation {animationName}");
 
             if (_currAnimation != null && !internalCall)
+            {
+                _frameToTurnOff = CurrFrame;
                 _waitingAnimChange = false;
-            
+            }
+
             _currAnimation = animationName;
             _ttlFrames = CurrAnim.Frames.Length;
             _currFrameIdx = 0;
