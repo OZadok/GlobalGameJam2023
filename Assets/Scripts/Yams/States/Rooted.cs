@@ -1,4 +1,5 @@
 using System;
+using SuperMaxim.Messaging;
 using UnityEngine;
 
 namespace Yams.States
@@ -24,6 +25,7 @@ namespace Yams.States
         {
             timeSinceRooted = 0f;
             manager.Anim.ChangeAnim("Rooted");
+            Messenger.Default.Publish(new YamRootedEvent());
         }
 
         public override YamStateName Update()

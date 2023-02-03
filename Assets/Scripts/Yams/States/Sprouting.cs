@@ -1,4 +1,5 @@
 using System;
+using SuperMaxim.Messaging;
 using UnityEngine;
 
 namespace Yams
@@ -23,6 +24,7 @@ namespace Yams
         {
             timeSinceSprouted = 0f;
             manager.Anim.ChangeAnim("Sprout");
+            Messenger.Default.Publish(new YamCreatedEvent());
         }
 
         public override YamStateName Update()
