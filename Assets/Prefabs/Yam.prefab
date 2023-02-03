@@ -1539,6 +1539,7 @@ MonoBehaviour:
     timeToWalk: 0
   _anim: {fileID: 6173929837911213415}
   _currentStateName: 0
+  Collider: {fileID: 7221552738234236907}
 --- !u!65 &7221552738234236907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3152,11 +3153,6 @@ MonoBehaviour:
     nextAnimName: 
   - name: Climb
     parent: {fileID: 8460914695274946077}
-    loop: 0
-    notifyOnEnd: 1
-    nextAnimName: 
-  - name: Rooted
-    parent: {fileID: 1007011558806096299}
     loop: 0
     notifyOnEnd: 1
     nextAnimName: 
