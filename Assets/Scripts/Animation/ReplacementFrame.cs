@@ -37,10 +37,10 @@ namespace Animation
             _mr.enabled = true;
             
             _holdCounter -= 1;
-            if (_holdCounter == 0) 
+            if (_holdCounter == 0)
                 return new FrameResult() {hold = false, offset = offset};
             
-            TweakModel();
+            KeepAliveTweak();
             return new FrameResult() {hold = true, offset = offset};
 
         }
@@ -50,7 +50,7 @@ namespace Animation
             _holdCounter = hold;
         }
 
-        private void TweakModel()
+        public void KeepAliveTweak()
         {
             //TODO - tweak model from shader to assimilate a "breathing frame"
         }
