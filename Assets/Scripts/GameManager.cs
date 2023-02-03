@@ -1,3 +1,6 @@
+using System;
+using Events;
+using SuperMaxim.Messaging;
 using UnityEngine;
 using Yams;
 
@@ -14,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public Collider GardenBedCollider;
 
+    [SerializeField] private float _gameTime = 60f;
+    private float _gameStartTime;
 
     private void Awake()
     {
@@ -25,5 +30,28 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("2 Game Managers in the scene!");
             Destroy(this);
         }
+    }
+
+    private void Start()
+    {
+        _gameStartTime = GetCurrentTime();
+    }
+
+    private void Update()
+    {
+        if (GetRemainingTime() <= 0)
+        {
+            Messenger.Default.Publish(new GameOverEvent());
+        }
+    }
+
+    public float GetRemainingTime()
+    {
+        return _gameTime - (GetCurrentTime() - _gameStartTime);
+    }
+
+    private float GetCurrentTime()
+    {
+        return Time.time;
     }
 }
