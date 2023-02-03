@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Animation;
 using UnityEngine;
+using Yams.States;
 
 namespace Yams
 {
@@ -10,8 +12,11 @@ namespace Yams
         [SerializeField] private Sprouting.SproutingStateSettings _sproutingSettings;
         [SerializeField] private Alive.AliveStateSettings _aliveSettings;
         [SerializeField] private Rooted.RootedStateSettings _rootedSettings;
+        [SerializeField] private ReplacementAnimator _anim;
 
         private YamState _currentState;
+        
+        public ReplacementAnimator Anim => _anim;
 
         private void Start()
         {
@@ -33,7 +38,13 @@ namespace Yams
             
             if (_states[newStateName] != _currentState)
             {
+                Debug.Log($"{_currentState.GetType()} ======> {_states[newStateName].GetType()}");
                 _currentState.Exit();
+                if (newStateName == YamState.YamStateName.Destroyed)
+                {
+                    Destroy(this.gameObject);
+                    return;
+                }
                 _currentState = _states[newStateName];
                 _currentState.Enter();
             }

@@ -10,6 +10,7 @@ namespace Yams
             Alive = 2, 
             Rooted = 3,
             Escaped = 4,
+            Destroyed = 10,
         }
 
         protected YamStateManager manager;

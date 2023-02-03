@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Yams
@@ -5,7 +6,7 @@ namespace Yams
     public class Alive : YamState
     {
         
-        [SerializeField]
+        [Serializable]
         public struct AliveStateSettings
         {
             public float speed;
@@ -20,17 +21,18 @@ namespace Yams
 
         public override void Enter()
         {
-            throw new System.NotImplementedException();
+            manager.Anim.ChangeAnim("Walk");
         }
 
         public override YamStateName Update()
         {
-            throw new System.NotImplementedException();
+            manager.transform.Rotate(Vector3.up, 0.1f);
+            return YamStateName.Alive;
         }
 
         public override void Exit()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
