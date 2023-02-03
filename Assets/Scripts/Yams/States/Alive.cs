@@ -1,25 +1,38 @@
+using System;
+using UnityEngine;
+
 namespace Yams
 {
     public class Alive : YamState
     {
-        public Alive(YamStateManager manager) : base(manager)
+        
+        [Serializable]
+        public struct AliveStateSettings
         {
-            // pass alive initialization specific args here.
+            public float speed;
+        }
+
+        private AliveStateSettings _settings;
+        
+        public Alive(YamStateManager manager, AliveStateSettings settings) : base(manager)
+        {
+            _settings = settings;
         }
 
         public override void Enter()
         {
-            throw new System.NotImplementedException();
+            manager.Anim.ChangeAnim("Walk");
         }
 
         public override YamStateName Update()
         {
-            throw new System.NotImplementedException();
+            manager.transform.Rotate(Vector3.up, 0.1f);
+            return YamStateName.Alive;
         }
 
         public override void Exit()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

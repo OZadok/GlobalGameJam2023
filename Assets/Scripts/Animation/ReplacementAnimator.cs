@@ -25,6 +25,7 @@ namespace Animation
         private int _currFrame;
         private int _ttlFrames;
         private ReplacementFrame.FrameResult _lastFrameResult;
+        private ReplacementFrame _frameToTurnOff;
 
 
         private void Start()
@@ -57,6 +58,15 @@ namespace Animation
                 _frames[_currAnimation][_currFrame].TurnOff();
                 _currFrame = (_currFrame + 1) % _ttlFrames;
             }
+
+            // leftover after "ChangeAnim" was called
+            if (_frameToTurnOff != null)
+            {
+                _frameToTurnOff.TurnOff();
+                _frameToTurnOff.ResetHold();
+                _frameToTurnOff = null;
+            }
+            
             _lastFrameResult = _frames[_currAnimation][_currFrame].TurnOn();
             if (controlledTransform != null)
                 controlledTransform.transform.localPosition += _lastFrameResult.offset * Speed;
@@ -68,7 +78,10 @@ namespace Animation
             if (!_frames.ContainsKey(animationName))
                 throw new Exception($"No such animation as {animationName}");
 
-            _frames[_currAnimation][_currFrame].ResetHold();
+            Debug.Log($"Starting animation {animationName}");
+
+            if (_currAnimation != null)
+                _frameToTurnOff = _frames[_currAnimation][_currFrame];
             _currAnimation = animationName;
             _ttlFrames = _frames[_currAnimation].Length;
             _currFrame = 0;
