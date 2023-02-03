@@ -19,6 +19,7 @@ namespace Yams
         private YamState CurrentState => _states[_currentStateName];
         
         public ReplacementAnimator Anim => _anim;
+        public Collider Collider;
 
         private void Start()
         {

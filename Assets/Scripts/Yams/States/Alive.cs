@@ -1,4 +1,5 @@
 using System;
+using SuperMaxim.Messaging;
 using UnityEngine;
 
 namespace Yams
@@ -13,6 +14,8 @@ namespace Yams
         }
 
         private AliveStateSettings _settings;
+
+        private YamStateName _yamStateName; 
         
         public Alive(YamStateManager manager, AliveStateSettings settings) : base(manager)
         {
@@ -22,13 +25,15 @@ namespace Yams
         public override void Enter(YamStateName prevState)
         {
             manager.Anim.ChangeAnim("Walk");
+            Messenger.Default.Subscribe<YamHitEvent>(OnHit);
+            _yamStateName = YamStateName.Alive;
         }
 
         public override YamStateName Update()
         {
             
             // manager.transform.Rotate(Vector3.up, 0.1f);
-            return YamStateName.Alive;
+            return _yamStateName;
         }
 
         public override void FixedUpdate()
@@ -55,7 +60,16 @@ namespace Yams
 
         public override void Exit()
         {
-            
+            Messenger.Default.Unsubscribe<YamHitEvent>(OnHit);
+        }
+
+        private void OnHit(YamHitEvent yamHitEvent)
+        {
+            if (manager.Collider == yamHitEvent.Collider)
+            {
+                // change state to Rooted
+                _yamStateName = YamStateName.Rooted;
+            }
         }
     }
 }
