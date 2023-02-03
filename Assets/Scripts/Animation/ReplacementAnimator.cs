@@ -24,6 +24,7 @@ namespace Animation
         private string _currAnimation;
         private int _currFrame;
         private int _ttlFrames;
+        private ReplacementFrame.FrameResult _lastFrameResult;
 
 
         private void Start()
@@ -51,11 +52,14 @@ namespace Animation
 
         public void Tick(TickEvent tickEvent)
         {
-            _frames[_currAnimation][_currFrame].TurnOff();
-            _currFrame = (_currFrame + 1) % _ttlFrames;
-            var offset = _frames[_currAnimation][_currFrame].TurnOn();
+            if (!_lastFrameResult.hold)
+            {
+                _frames[_currAnimation][_currFrame].TurnOff();
+                _currFrame = (_currFrame + 1) % _ttlFrames;
+            }
+            _lastFrameResult = _frames[_currAnimation][_currFrame].TurnOn();
             if (controlledTransform != null)
-                controlledTransform.transform.localPosition += offset * Speed;
+                controlledTransform.transform.localPosition += _lastFrameResult.offset * Speed;
         }
 
         //TODO: add "bool immediate" argument to enable non-immediate transitions
@@ -64,9 +68,11 @@ namespace Animation
             if (!_frames.ContainsKey(animationName))
                 throw new Exception($"No such animation as {animationName}");
 
+            _frames[_currAnimation][_currFrame].ResetHold();
             _currAnimation = animationName;
             _ttlFrames = _frames[_currAnimation].Length;
             _currFrame = 0;
+            _lastFrameResult = new ReplacementFrame.FrameResult() {hold = true}; //this will make Tick stay on frame 0
         }
     }
 }
