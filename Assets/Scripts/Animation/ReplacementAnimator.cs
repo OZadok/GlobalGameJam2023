@@ -68,9 +68,11 @@ namespace Animation
             if (!_frames.ContainsKey(animationName))
                 throw new Exception($"No such animation as {animationName}");
 
+            _frames[_currAnimation][_currFrame].ResetHold();
             _currAnimation = animationName;
             _ttlFrames = _frames[_currAnimation].Length;
             _currFrame = 0;
+            _lastFrameResult = new ReplacementFrame.FrameResult() {hold = true}; //this will make Tick stay on frame 0
         }
     }
 }

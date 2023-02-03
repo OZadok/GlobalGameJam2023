@@ -28,7 +28,7 @@ namespace Animation
 
         public void TurnOff()
         {
-            _holdCounter = hold; // reset;
+            ResetHold();
             _mr.enabled = false;
         }
         
@@ -43,6 +43,11 @@ namespace Animation
             TweakModel();
             return new FrameResult() {hold = true, offset = offset};
 
+        }
+
+        public void ResetHold()
+        {
+            _holdCounter = hold;
         }
 
         private void TweakModel()

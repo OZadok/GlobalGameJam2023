@@ -1,5 +1,3 @@
-using System;
-
 namespace Yams
 {
     public abstract class YamState
