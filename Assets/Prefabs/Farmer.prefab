@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 8642627023569561186}
-  _timeFromPressToHit: 0.6
+  _timeFromPressToHit: 0.5
   _hitCenter: {fileID: 2781626795915380340}
   _hitRadius: 1.5
   _yamsLayerMask:
