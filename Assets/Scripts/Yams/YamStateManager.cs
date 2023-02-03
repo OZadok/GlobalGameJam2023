@@ -39,6 +39,11 @@ namespace Yams
         private void Update()
         {
             var newStateName = CurrentState.Update();
+            if (newStateName == YamState.YamStateName.Destroyed)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
             
             if (_states[newStateName] != CurrentState)
             {
@@ -46,11 +51,6 @@ namespace Yams
                 CurrentState.Exit();
                 var previousStateName = _currentStateName;
                 _currentStateName = newStateName;
-                if (newStateName == YamState.YamStateName.Destroyed)
-                {
-                    Destroy(this.gameObject);
-                    return;
-                }
                 CurrentState.Enter(previousStateName);
             }
         }

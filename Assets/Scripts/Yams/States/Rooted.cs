@@ -39,8 +39,11 @@ namespace Yams.States
             return YamStateName.Rooted;
         }
 
+        private int instantiateCounter = 0;
         private void InstantiateVine()
         {
+            instantiateCounter++;
+            Debug.Log($"instantiateCounter: {instantiateCounter}");
             UnityEngine.Object.Instantiate(GameManager.Instance.vinesParent, manager.transform.position, Quaternion.identity);
         }
 

@@ -47,17 +47,30 @@ namespace Animation
         private ReplacementFrame CurrFrame => CurrAnim.Frames[_currFrameIdx];
 
 
-        private void Start()
+        private void Awake()
         {
             _anims = new Dictionary<string, Animation>();
             foreach (var anim in animations)
             {
                 _anims[anim.name] = anim;
-                foreach (var frame in _anims[anim.name].Frames)
-                    frame.TurnOff();
+                // foreach (var frame in _anims[anim.name].Frames)
+                //     frame.TurnOff();
             }
+        }
 
-            ChangeAnim(_anims.Keys.First());
+        private void Start()
+        {
+            foreach (var anim in _anims.Values)
+            {
+                foreach (var replacementFrame in anim.Frames)
+                {
+                    replacementFrame.TurnOff();
+                }
+            }
+            if (_currAnimation.Equals(default))
+            {
+                ChangeAnim(_anims.Keys.First());
+            }
         }
 
         private void OnEnable()
@@ -95,7 +108,7 @@ namespace Animation
                     if (!CurrAnim.loop)
                     {
                         //play next animation 
-                        if (CurrAnim.nextAnimName != null)
+                        if (CurrAnim.nextAnimName != null && !CurrAnim.nextAnimName.Equals(""))
                             ChangeAnim(CurrAnim.nextAnimName, true);
 
                         // stay stuck on curr frame

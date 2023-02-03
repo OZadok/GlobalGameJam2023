@@ -91,6 +91,7 @@ namespace Yams
             {
                 // change state to Rooted
                 _yamStateName = YamStateName.Rooted;
+                Messenger.Default.Unsubscribe<YamHitEvent>(OnHit);
             }
         }
     }
