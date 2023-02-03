@@ -27,6 +27,7 @@ namespace Yams
             manager.Anim.ChangeAnim("Walk");
             Messenger.Default.Subscribe<YamHitEvent>(OnHit);
             _yamStateName = YamStateName.Alive;
+            Messenger.Default.Subscribe<TickEvent>(OnTick);
         }
 
         public override YamStateName Update()
@@ -36,9 +37,8 @@ namespace Yams
             return _yamStateName;
         }
 
-        public override void FixedUpdate()
+        public void OnTick(TickEvent tickEvent)
         {
-            base.FixedUpdate();
             var managerTransform = manager.transform;
             var position = managerTransform.position;
             var forward = managerTransform.forward;
@@ -50,16 +50,38 @@ namespace Yams
             var rotationSpeed = new Vector3(0, 90, 0);
             if (forwardRightCollision || forwardCollision)
             {
-                manager.transform.Rotate(-rotationSpeed * Time.fixedDeltaTime);
+                manager.transform.Rotate(-rotationSpeed * tickEvent.DeltaTime);
             }
             else if (forwardLeftCollision)
             {
-                manager.transform.Rotate(rotationSpeed * Time.fixedDeltaTime);
+                manager.transform.Rotate(rotationSpeed * tickEvent.DeltaTime);
             }
         }
+        // public override void FixedUpdate()
+        // {
+        //     base.FixedUpdate();
+        //     var managerTransform = manager.transform;
+        //     var position = managerTransform.position;
+        //     var forward = managerTransform.forward;
+        //     var right = managerTransform.right;
+        //     var distance = 1;
+        //     var forwardCollision = Physics.Raycast(position, forward, distance);
+        //     var forwardRightCollision = Physics.Raycast(position, forward + right, distance);
+        //     var forwardLeftCollision = Physics.Raycast(position, forward - right, distance);
+        //     var rotationSpeed = new Vector3(0, 90, 0);
+        //     if (forwardRightCollision || forwardCollision)
+        //     {
+        //         manager.transform.Rotate(-rotationSpeed * Time.fixedDeltaTime);
+        //     }
+        //     else if (forwardLeftCollision)
+        //     {
+        //         manager.transform.Rotate(rotationSpeed * Time.fixedDeltaTime);
+        //     }
+        // }
 
         public override void Exit()
         {
+            Messenger.Default.Unsubscribe<TickEvent>(OnTick);
             Messenger.Default.Unsubscribe<YamHitEvent>(OnHit);
         }
 
