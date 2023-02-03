@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5383874371903444602}
   - component: {fileID: 9092252770094066929}
   - component: {fileID: 5272026395520114378}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 7055437051941385532}
   - component: {fileID: 8085254794252397033}
   - component: {fileID: 8620819096851805974}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutFrame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5605528580130513656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 6315911982647980372}
   - component: {fileID: 645613885550888786}
   - component: {fileID: 7211937167294150755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 141755596040218986}
   - component: {fileID: 380055861612279710}
   - component: {fileID: 6886388675436020066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbFrame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 6488837225586535997}
   - component: {fileID: 7948139920827541444}
   - component: {fileID: 2589362477236816498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WalkFrame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 2815616800168342119}
   - component: {fileID: 4912346474745612613}
   - component: {fileID: 3409788680922262522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutFrame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 2337626500186883283}
   - component: {fileID: 574975071710314675}
   - component: {fileID: 2341622339092045468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleToWalkFrame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 7361210095193694580}
   - component: {fileID: 8646626994048535367}
   - component: {fileID: 5886737445842087495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbFrame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 1501728567193075995}
   - component: {fileID: 7084387885474734645}
   - component: {fileID: 7567836102262755252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutToIdleFrame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 639327659910675551}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 397630823532536077}
   - component: {fileID: 5335962656311893988}
   - component: {fileID: 7549493574749326132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RootedFrame (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 5817110018576031470}
   - component: {fileID: 3080715288256331908}
   - component: {fileID: 9127017450211491670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutToIdleFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1007011558806096299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rooted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1200,7 @@ GameObject:
   - component: {fileID: 7626976216968968166}
   - component: {fileID: 2980816322607034636}
   - component: {fileID: 3164909666944544910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleFrame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1298,7 +1298,7 @@ GameObject:
   - component: {fileID: 7573160240179457755}
   - component: {fileID: 4119323040773630805}
   - component: {fileID: 2555361681276727722}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RootedFrame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 4882668681756944164}
   - component: {fileID: 5347022069133321058}
   - component: {fileID: 3027357192307827248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutToIdleFrame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,7 +1492,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4725266551376613877}
   - component: {fileID: 7352764293283463603}
-  m_Layer: 0
+  - component: {fileID: 7221552738234236907}
+  m_Layer: 6
   m_Name: Yam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1537,6 +1538,20 @@ MonoBehaviour:
   _idleSettings:
     timeToWalk: 0
   _anim: {fileID: 6173929837911213415}
+  _currentStateName: 0
+--- !u!65 &7221552738234236907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313412163468212576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &3455219290064926693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1564,7 @@ GameObject:
   - component: {fileID: 4748569465817662339}
   - component: {fileID: 7607296755214922174}
   - component: {fileID: 608786870929955577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbFrame (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1647,7 +1662,7 @@ GameObject:
   - component: {fileID: 1268160633806426751}
   - component: {fileID: 351645086692030558}
   - component: {fileID: 379033264508062467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WalkFrame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1745,7 +1760,7 @@ GameObject:
   - component: {fileID: 2268453044381008291}
   - component: {fileID: 7430953559460150111}
   - component: {fileID: 8099385841897827828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbFrame (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,7 +1858,7 @@ GameObject:
   - component: {fileID: 224001596249025728}
   - component: {fileID: 3089721971638191031}
   - component: {fileID: 248430228732594296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleFrame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1941,7 +1956,7 @@ GameObject:
   - component: {fileID: 3420036320890419685}
   - component: {fileID: 5040925514805804044}
   - component: {fileID: 2674833489776929780}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleToWalkFrame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2039,7 +2054,7 @@ GameObject:
   - component: {fileID: 6387112088565585564}
   - component: {fileID: 8154789130932427611}
   - component: {fileID: 8336970412035607671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleToWalkFrame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2134,7 +2149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 846047746303992084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleToWalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2173,7 +2188,7 @@ GameObject:
   - component: {fileID: 571295091377139813}
   - component: {fileID: 6709928774756767889}
   - component: {fileID: 1559698780246218063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RootedFrame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2268,7 +2283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8460914695274946077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Climb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2307,7 +2322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7566474987212837542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutToIdle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2346,7 +2361,7 @@ GameObject:
   - component: {fileID: 5132086577949623081}
   - component: {fileID: 8542898506968269662}
   - component: {fileID: 980144177899799806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WalkFrame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2444,7 +2459,7 @@ GameObject:
   - component: {fileID: 6831772473999607487}
   - component: {fileID: 8952915252008908505}
   - component: {fileID: 1217991866364865979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WalkFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2542,7 +2557,7 @@ GameObject:
   - component: {fileID: 4844339341134316845}
   - component: {fileID: 1570760399046397681}
   - component: {fileID: 3108390523795237714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2640,7 +2655,7 @@ GameObject:
   - component: {fileID: 7096685943158956176}
   - component: {fileID: 7053350294077082586}
   - component: {fileID: 7157204579135256766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RootedFrame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2735,7 +2750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6055526024866979338}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2776,7 +2791,7 @@ GameObject:
   - component: {fileID: 7437545760945741984}
   - component: {fileID: 2030611589816886851}
   - component: {fileID: 3169289520633104120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutToIdleFrame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2874,7 +2889,7 @@ GameObject:
   - component: {fileID: 1919133743506634355}
   - component: {fileID: 774369916396560767}
   - component: {fileID: 303619779418594383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WalkFrame (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2972,7 +2987,7 @@ GameObject:
   - component: {fileID: 7841810939123617264}
   - component: {fileID: 3911598570679669428}
   - component: {fileID: 2037673395057379485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleToWalkFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3068,7 +3083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4673051059323242844}
   - component: {fileID: 6173929837911213415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: YamAnimator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3083,7 +3098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6322861159309720194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.526, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3163,7 +3178,7 @@ GameObject:
   - component: {fileID: 3267028278437477004}
   - component: {fileID: 449000097713454082}
   - component: {fileID: 6600347893526043413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WalkFrame (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3261,7 +3276,7 @@ GameObject:
   - component: {fileID: 8425487058835644500}
   - component: {fileID: 1252400327277457665}
   - component: {fileID: 5852714446540214452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbFrame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3359,7 +3374,7 @@ GameObject:
   - component: {fileID: 1034783018401032951}
   - component: {fileID: 8538585995965497394}
   - component: {fileID: 4168980869566879261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RootedFrame (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3457,7 +3472,7 @@ GameObject:
   - component: {fileID: 391459236660869475}
   - component: {fileID: 8181826474734310865}
   - component: {fileID: 1153530256666961578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutToIdleFrame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3555,7 +3570,7 @@ GameObject:
   - component: {fileID: 4319287168444699694}
   - component: {fileID: 4699392830119852469}
   - component: {fileID: 6452157978979989892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutFrame (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3653,7 +3668,7 @@ GameObject:
   - component: {fileID: 8804084937429578055}
   - component: {fileID: 1465700348685671127}
   - component: {fileID: 2238559679470497223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RootedFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3751,7 +3766,7 @@ GameObject:
   - component: {fileID: 5410850251750986858}
   - component: {fileID: 229072094488886626}
   - component: {fileID: 4687775096663740114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleToWalkFrame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3849,7 +3864,7 @@ GameObject:
   - component: {fileID: 145727998022020638}
   - component: {fileID: 6735165209788426942}
   - component: {fileID: 5115779437182385684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RootedFrame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3947,7 +3962,7 @@ GameObject:
   - component: {fileID: 7851410184033230595}
   - component: {fileID: 9024989172725771121}
   - component: {fileID: 5537210078165763813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutFrame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4045,7 +4060,7 @@ GameObject:
   - component: {fileID: 817027426309768372}
   - component: {fileID: 4644316285504452303}
   - component: {fileID: 2897415798110733895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SproutFrame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4143,7 +4158,7 @@ GameObject:
   - component: {fileID: 8311581451749876581}
   - component: {fileID: 547004446769445654}
   - component: {fileID: 6554011958711880406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbFrame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4241,7 +4256,7 @@ GameObject:
   - component: {fileID: 3493643189488460310}
   - component: {fileID: 220474997210353101}
   - component: {fileID: 7876514610681209699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleFrame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4339,7 +4354,7 @@ GameObject:
   - component: {fileID: 1423661764779262487}
   - component: {fileID: 8433228000194041129}
   - component: {fileID: 4633022206977365698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbFrame (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4437,7 +4452,7 @@ GameObject:
   - component: {fileID: 4940393293129647242}
   - component: {fileID: 7111377227891227871}
   - component: {fileID: 439986261275963953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WalkFrame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

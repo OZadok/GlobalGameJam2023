@@ -24,6 +24,11 @@ namespace Yams
         public abstract void Enter(YamStateName prevState);
         
         public abstract YamStateName Update();
+
+        public virtual void FixedUpdate()
+        {
+            
+        }
         
         public abstract void Exit();
     }

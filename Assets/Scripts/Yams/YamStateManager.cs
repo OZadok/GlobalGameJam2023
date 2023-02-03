@@ -15,7 +15,7 @@ namespace Yams
         [SerializeField] private Idle.IdleStateSettings _idleSettings;
         [SerializeField] private ReplacementAnimator _anim;
 
-        private YamState.YamStateName _currentStateName;
+        [SerializeField] private YamState.YamStateName _currentStateName;
         private YamState CurrentState => _states[_currentStateName];
         
         public ReplacementAnimator Anim => _anim;
@@ -41,16 +41,22 @@ namespace Yams
             
             if (_states[newStateName] != CurrentState)
             {
-                Debug.Log($"{_currentStateName.GetType()} ======> {_states[newStateName].GetType()}");
+                Debug.Log($"{_currentStateName} ======> {newStateName}");
                 CurrentState.Exit();
+                var previousStateName = _currentStateName;
+                _currentStateName = newStateName;
                 if (newStateName == YamState.YamStateName.Destroyed)
                 {
                     Destroy(this.gameObject);
                     return;
                 }
-                CurrentState.Enter(_currentStateName);
-                _currentStateName = newStateName;
+                CurrentState.Enter(previousStateName);
             }
+        }
+
+        private void FixedUpdate()
+        {
+            CurrentState.FixedUpdate();
         }
     }
 }
