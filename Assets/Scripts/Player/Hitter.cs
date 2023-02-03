@@ -13,6 +13,10 @@ public class Hitter : MonoBehaviour
     [SerializeField] private float _hitRadius = 1f;
     [SerializeField] private LayerMask _yamsLayerMask;
 
+    private ShovelWhooshEvent _shovelWhooshEvent = new ShovelWhooshEvent();
+
+    private float _lastWhackTime;
+
     private void Reset()
     {
         if (_animator == null)
@@ -28,8 +32,10 @@ public class Hitter : MonoBehaviour
 
     private void OnWhack(InputValue value)
     {
-        if (value.isPressed && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+        if (value.isPressed && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Hit") && Time.time >= _lastWhackTime + _timeFromPressToHit + 0.2f)
         {
+            _lastWhackTime = Time.time;
+            Messenger.Default.Publish(_shovelWhooshEvent);
             _animator.SetTrigger(Hit);
             Invoke(nameof(CalculateHit), _timeFromPressToHit);
         }
