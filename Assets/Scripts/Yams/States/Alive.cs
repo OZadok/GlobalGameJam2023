@@ -54,7 +54,11 @@ namespace Yams
             var forwardRightCollision = Physics.Raycast(position, forward + right, distance);
             var forwardLeftCollision = Physics.Raycast(position, forward - right, distance);
             var rotationSpeed = new Vector3(0, 90, 0);
-            if (forwardRightCollision || forwardCollision)
+            if (forwardCollision)
+            {
+                manager.transform.Rotate(-rotationSpeed * 3f * deltaTime);
+            }
+            else if (forwardRightCollision)
             {
                 manager.transform.Rotate(-rotationSpeed * deltaTime);
             }
