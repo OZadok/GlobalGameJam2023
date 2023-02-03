@@ -118,7 +118,10 @@ namespace Animation
             
             _lastFrameResult = CurrFrame.TurnOn();
             if (controlledTransform != null)
-                controlledTransform.transform.localPosition += _lastFrameResult.offset * Speed;
+            {
+                controlledTransform.Translate(_lastFrameResult.offset * Speed, Space.Self);
+                // controlledTransform.transform.localPosition += _lastFrameResult.offset * Speed;
+            }
         }
 
         //TODO: add "bool immediate" argument to enable non-immediate transitions
