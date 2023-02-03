@@ -4,6 +4,16 @@ namespace Yams
 {
     public class Vine : MonoBehaviour
     {
-        //TODO: this guy will be responsible for generating new yams :)
+        [SerializeField] private YamStateManager yamPrefab;
+        [SerializeField] private int yamNum;
+
+        private void GenerateYams()
+        {
+            for (int i = 0; i < yamNum; i++)
+            {
+                
+            }
+        }
+        
     }
 }
