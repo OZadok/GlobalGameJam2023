@@ -35,7 +35,7 @@ namespace Yams
         public override YamStateName Update()
         {
             timeSinceSprouted += Time.deltaTime;
-            if (timeSinceSprouted >= _timeToSprout && IsFarFromPlayer())
+            if (timeSinceSprouted >= _timeToSprout)
             {
                 timeSinceSprouted = 0f;
                 return YamStateName.Alive;

@@ -24,7 +24,7 @@ namespace Yams
 
         public override void Enter(YamStateName prevState)
         {
-            manager.Anim.ChangeAnim("Walk");
+            // manager.Anim.ChangeAnim("Walk"); // This already happens by animation transition from sprout
             Messenger.Default.Subscribe<YamHitEvent>(OnHit);
             _yamStateName = YamStateName.Alive;
             Messenger.Default.Subscribe<TickEvent>(OnTick);
