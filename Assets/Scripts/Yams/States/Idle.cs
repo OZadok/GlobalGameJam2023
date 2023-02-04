@@ -31,7 +31,6 @@ namespace Yams.States
             if (_timeSinceIdle > _settings.timeToWalk)
             {
                 _timeSinceIdle = 0f;
-                manager.Anim.ChangeAnim("IdleToWalk");
                 return YamStateName.Alive;
             }
 

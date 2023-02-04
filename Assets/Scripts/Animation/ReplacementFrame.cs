@@ -1,8 +1,8 @@
+using SuperMaxim.Core.Extensions;
 using UnityEngine;
 
 namespace Animation
 {
-    [RequireComponent(typeof(MeshRenderer))]
     public class ReplacementFrame : MonoBehaviour
     {
 
@@ -15,26 +15,26 @@ namespace Animation
         [SerializeField] private Vector3 offset;
         [SerializeField] private int hold = 1;
         
-        private MeshRenderer _mr;
+        private MeshRenderer[] _mrs;
         private int _holdCounter;
 
         
         
         private void Awake()
         {
-            _mr = GetComponent<MeshRenderer>();
+            _mrs = GetComponentsInChildren<MeshRenderer>(true);
             _holdCounter = hold;
         }
 
         public void TurnOff()
         {
             ResetHold();
-            _mr.enabled = false;
+            _mrs.ForEach(mr =>  mr.enabled = false);
         }
         
         public FrameResult TurnOn()
         {
-            _mr.enabled = true;
+            _mrs.ForEach(mr =>  mr.enabled = true);
             
             _holdCounter -= 1;
             if (_holdCounter == 0)
