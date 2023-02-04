@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public float GameTime { get; } = 60f;
     private float _gameStartTime;
 
+    private bool _isGameStarted;
+
     [SerializeField] public Transform PlayerTransform;
 
     private void Awake()
@@ -53,6 +55,12 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        if (!_isGameStarted && Input.anyKey)
+        {
+            _isGameStarted = true;
+            StartGame();
+        }
     }
 
     public float GetRemainingTime()
@@ -73,5 +81,6 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1;
+        Messenger.Default.Publish(new GameStartEvent());
     }
 }

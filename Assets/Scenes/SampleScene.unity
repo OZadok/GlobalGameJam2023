@@ -2161,7 +2161,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1361831978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6085482143807239411}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1361831978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2210,6 +2222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400631379}
   - component: {fileID: 1400631380}
+  - component: {fileID: 1400631381}
   m_Layer: 5
   m_Name: StartScreen
   m_TagString: Untagged
@@ -2254,6 +2267,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1400631381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400631378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8defe9cf602485c4eb4bb1b0e9d6f59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvasGroup: {fileID: 1400631380}
 --- !u!1 &1406705378
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,6 +3614,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eba1dbf022eb4a45bed816041fd7806, type: 3}
+--- !u!114 &6085482143807239411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5855995715006651530, guid: 6eba1dbf022eb4a45bed816041fd7806, type: 3}
+  m_PrefabInstance: {fileID: 6085482143807239410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647eefccb7594191b5acbda5c16eeeae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9173892738316259697
 PrefabInstance:
   m_ObjectHideFlags: 0
