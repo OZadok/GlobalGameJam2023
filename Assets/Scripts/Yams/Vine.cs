@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using Utils;
+using Random = UnityEngine.Random;
 
 namespace Yams
 {
@@ -13,6 +15,16 @@ namespace Yams
         private void Start()
         {
             GenerateYams();
+        }
+
+        private void OnEnable()
+        {
+            OurPhysicsSystem.Instance.RegisterVine(transform);
+        }
+
+        private void OnDisable()
+        {
+            OurPhysicsSystem.Instance.RemoveVine(transform);
         }
 
         private void GenerateYams()

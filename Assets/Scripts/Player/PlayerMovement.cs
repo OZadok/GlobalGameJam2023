@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float _forwardAmount;
     private float _turnAmount;
+
+    // [SerializeField] private LayerMask _notAllowedInsideLayerMask;
+    // [SerializeField] private Collider _playerCollider;
 
     private void Awake()
     {
@@ -82,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         KeepInLegalSpace();
+        KeepOutOfVine();
     }
 
     private bool KeepInLegalSpace()
@@ -99,4 +104,24 @@ public class PlayerMovement : MonoBehaviour
     {
         return GameManager.Instance.GardenBedCollider.bounds.Contains(position);
     }
+
+    private void KeepOutOfVine()
+    {
+        if (OurPhysicsSystem.Instance.CheckCollisionWithVine(transform.position, OurPhysicsSystem.PlayerRadius, out var vineTransform))
+        {
+            var vinePosition = vineTransform.position.WithY(0);
+            var direction = (-vinePosition + transform.position.WithY(0)).normalized;
+            var distance = OurPhysicsSystem.PlayerRadius + OurPhysicsSystem.VineRadius;
+            var newPosition = vinePosition + direction * distance;
+            transform.position = newPosition;
+        }
+    }
+
+    // private bool asdf()
+    // {
+    //     // Physics.
+    //     // var ray = new Ray(transform.position, transform.forward);
+    //     // if (_playerCollider.Raycast(ray, out var hitInfo, 0.1f));
+    //     // _notAllowedInsideLayerMask
+    // }
 }
