@@ -67,7 +67,7 @@ namespace Animation
                     replacementFrame.TurnOff();
                 }
             }
-            if (_currAnimation.Equals(default))
+            if (_currAnimation == null || _currAnimation.Equals(default))
             {
                 ChangeAnim(_anims.Keys.First());
             }
