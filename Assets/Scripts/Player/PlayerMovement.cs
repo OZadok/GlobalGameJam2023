@@ -75,5 +75,28 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("Forward", _forwardAmount, 0.1f, Time.deltaTime);
         _animator.SetFloat("Turn", _turnAmount,0.05f, Time.deltaTime);
         // _animator.SetFloat("Turn", _turnAmount);
+        
+        if (!IsPositionLegal(transform.position + transform.forward * _forwardAmount))
+        {
+            _animator.SetFloat("Forward", 0);
+        }
+
+        KeepInLegalSpace();
+    }
+
+    private bool KeepInLegalSpace()
+    {
+        if (IsPositionLegal(transform.position))
+        {
+            return false;
+        }
+
+        transform.position = GameManager.Instance.GardenBedCollider.ClosestPointOnBounds(transform.position);
+        return true;
+    }
+
+    private bool IsPositionLegal(Vector3 position)
+    {
+        return GameManager.Instance.GardenBedCollider.bounds.Contains(position);
     }
 }
