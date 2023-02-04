@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Animation;
 using UnityEngine;
 using Utils;
 using Random = UnityEngine.Random;
@@ -14,9 +15,11 @@ namespace Yams
         [SerializeField] private float radiusMax = 3f;
         [SerializeField] private float yamInstantiateTimeMin = 3f;
         [SerializeField] private float yamInstantiateTimeMax = 4.5f;
+        [SerializeField] private ReplacementAnimator animator;
 
         private void Start()
         {
+            // animator.ChangeAnim("Grow"); // this happens automatically when its the only animation
             GenerateYams();
         }
 
