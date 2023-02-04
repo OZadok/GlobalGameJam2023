@@ -18,8 +18,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public Collider GardenBedCollider;
 
-    [SerializeField] private float _gameTime = 60f;
+    public float GameTime { get; } = 60f;
     private float _gameStartTime;
+
+    private bool _isGameStarted;
 
     [SerializeField] public Transform PlayerTransform;
 
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("2 Game Managers in the scene!");
             Destroy(this);
         }
+        
+        Time.timeScale = 0;
     }
 
     private void Start()
@@ -51,15 +55,32 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        if (!_isGameStarted && Input.anyKey)
+        {
+            _isGameStarted = true;
+            StartGame();
+        }
     }
 
     public float GetRemainingTime()
     {
-        return _gameTime - (GetCurrentTime() - _gameStartTime);
+        return GameTime - (GetCurrentTime() - _gameStartTime);
     }
 
     private float GetCurrentTime()
     {
         return Time.time;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        Messenger.Default.Publish(new GameStartEvent());
     }
 }
