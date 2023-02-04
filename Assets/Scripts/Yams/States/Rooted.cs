@@ -46,7 +46,8 @@ namespace Yams.States
         {
             instantiateCounter++;
             Debug.Log($"instantiateCounter: {instantiateCounter}");
-            UnityEngine.Object.Instantiate(GameManager.Instance.vinesParent, manager.transform.position, Quaternion.identity);
+            var transform = manager.transform;
+            UnityEngine.Object.Instantiate(GameManager.Instance.vinesParent, transform.position, transform.rotation);
         }
 
         public override void Exit()
