@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _gameTime = 60f;
     private float _gameStartTime;
 
+    [SerializeField] public Transform PlayerTransform;
+
     private void Awake()
     {
         if (Instance == null)

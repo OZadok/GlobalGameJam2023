@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     private void OnDisable()
     {
         Messenger.Default.Unsubscribe<YamHitEvent>(OnYamHit);
-        Messenger.Default.Subscribe<ShovelWhooshEvent>(OnShovelWhoosh);
+        Messenger.Default.Unsubscribe<ShovelWhooshEvent>(OnShovelWhoosh);
     }
 
     private void OnShovelWhoosh(ShovelWhooshEvent obj)
