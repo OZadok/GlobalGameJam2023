@@ -1413,7 +1413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000345234584376690, guid: 31ee4ce071ed1425caf98d03559c3be7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6619089145991351373, guid: 31ee4ce071ed1425caf98d03559c3be7, type: 3}
       propertyPath: m_margin.y
@@ -1657,6 +1657,10 @@ PrefabInstance:
       propertyPath: vinesParent
       value: 
       objectReference: {fileID: 1979263356}
+    - target: {fileID: 5855995715006651530, guid: 6eba1dbf022eb4a45bed816041fd7806, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 215997812}
     - target: {fileID: 5855995715006651530, guid: 6eba1dbf022eb4a45bed816041fd7806, type: 3}
       propertyPath: GardenBedCollider
       value: 

@@ -1235,7 +1235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sproutingSettings:
-    timeToSprout: 3
+    timeToSproutMin: 1
+    timeToSproutMax: 2
+    safeDistanceFromPlayer: 4
   _aliveSettings:
     speed: 1
   _rootedSettings:
