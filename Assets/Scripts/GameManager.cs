@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private float _gameStartTime;
 
     private bool _isGameStarted;
+    private bool _isGameEnded;
 
     [SerializeField] public Transform PlayerTransform;
 
@@ -46,8 +47,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (GetRemainingTime() <= 0)
+        if (!_isGameEnded && GetRemainingTime() <= 0)
         {
+            _isGameEnded = true;
             Messenger.Default.Publish(new GameOverEvent());
         }
 

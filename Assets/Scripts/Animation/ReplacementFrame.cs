@@ -18,6 +18,8 @@ namespace Animation
         private MeshRenderer[] _mrs;
         private int _holdCounter;
 
+        [SerializeField] private AudioEvent _audioEvent;
+
         
         
         private void Awake()
@@ -34,6 +36,7 @@ namespace Animation
         
         public FrameResult TurnOn()
         {
+            _audioEvent?.Play(transform);
             _mrs.ForEach(mr =>  mr.enabled = true);
             
             _holdCounter -= 1;
