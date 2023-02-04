@@ -11,7 +11,7 @@ public class OurPhysicsSystem : MonoBehaviour
     }
 
     public const float VineRadius = 0.5f;
-    public const float PlayerRadius = 0.5f;
+    public const float PlayerRadius = 0.6f;
     public static OurPhysicsSystem Instance;
 
     [HideInInspector] public List<Transform> vines;
