@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("2 Game Managers in the scene!");
             Destroy(this);
         }
+        
+        Time.timeScale = 0;
     }
 
     private void Start()
@@ -61,5 +63,15 @@ public class GameManager : MonoBehaviour
     private float GetCurrentTime()
     {
         return Time.time;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1;
     }
 }
