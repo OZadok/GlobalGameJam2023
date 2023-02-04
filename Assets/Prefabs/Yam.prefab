@@ -752,7 +752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   hold: 1
-  _audioEvent: {fileID: 0}
+  _audioEvent: {fileID: 11400000, guid: 0785cfbea98878340a70d2b79eab361b, type: 2}
 --- !u!1001 &580474124651389297
 PrefabInstance:
   m_ObjectHideFlags: 0

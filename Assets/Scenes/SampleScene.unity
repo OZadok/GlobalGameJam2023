@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.4, g: 0.5047392, b: 0.6156863, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
@@ -882,6 +882,8 @@ MonoBehaviour:
   _shovelHitAudioEvent: {fileID: 11400000, guid: d058bcdb75dc03b4ca3fb07ff313a9d2, type: 2}
   _stepAudioEvent: {fileID: 11400000, guid: bad3f477b7fed454da383ad0ff4b043b, type: 2}
   _whooshAudioEvent: {fileID: 11400000, guid: 80acfdec9b4b252438505772ee2e88db, type: 2}
+  _timesUpAudioEvent: {fileID: 11400000, guid: 3eb13a3689f83a64f8f6f752cbb8513a, type: 2}
+  _timesAlmostUpAudioEvent: {fileID: 11400000, guid: 0226c149ce42c434cad707ffc7d1ac6d, type: 2}
 --- !u!1 &559278138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,15 +1821,6 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 1337223828022086379, guid: 910dbc28499794a348eab648a1eec77b, type: 3}
   m_PrefabInstance: {fileID: 9173892738316259697}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983133644}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 48, y: 0.001, z: 27}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1018855147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7255506018425940378, guid: 4f21a33f1c86c634db04c7d192685a91, type: 3}
@@ -2135,7 +2128,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361831975
 GameObject:
@@ -3535,7 +3528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1764204204084626681, guid: 26edf43fe8ce843feb96abd602d528f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.571053
+      value: 10.5710535
       objectReference: {fileID: 0}
     - target: {fileID: 1764204204084626681, guid: 26edf43fe8ce843feb96abd602d528f5, type: 3}
       propertyPath: m_LocalPosition.z
