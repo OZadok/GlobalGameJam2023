@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Utils;
 using Random = UnityEngine.Random;
@@ -11,6 +12,8 @@ namespace Yams
         [SerializeField] private int yamNumMax = 5;
         [SerializeField] private float radiusMin = 1.8f;
         [SerializeField] private float radiusMax = 3f;
+        [SerializeField] private float yamInstantiateTimeMin = 3f;
+        [SerializeField] private float yamInstantiateTimeMax = 4.5f;
 
         private void Start()
         {
@@ -35,8 +38,15 @@ namespace Yams
             {
                 var rot = Quaternion.AngleAxis(ang * i + Random.value * Random.value * ang, Vector3.up);
                 var pos = transform.position + rot * (Vector3.forward * Random.Range(radiusMin, radiusMax));
-                var yamGo = Instantiate(GameManager.Instance.yamPrefab, pos.WithY(0f), rot, GameManager.Instance.yamsParent);
+                var timeDelay = Random.Range(yamInstantiateTimeMin, yamInstantiateTimeMax);
+                StartCoroutine(CreateVineInTime(rot, pos, timeDelay));
             }
+        }
+
+        private IEnumerator CreateVineInTime(Quaternion rotation, Vector3 position, float time)
+        {
+            yield return new WaitForSeconds(time);
+            var yamGo = Instantiate(GameManager.Instance.yamPrefab, position.WithY(0f), rotation, GameManager.Instance.yamsParent);
         }
     }
 }
