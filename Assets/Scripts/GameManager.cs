@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R))
         {
-            SceneManager.LoadScene(0);
+            ResetGame();
         }
 
         if (!_isGameStarted && Input.anyKey)
@@ -63,6 +63,11 @@ public class GameManager : MonoBehaviour
             _isGameStarted = true;
             StartGame();
         }
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public float GetRemainingTime()

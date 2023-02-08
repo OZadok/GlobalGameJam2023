@@ -16,7 +16,7 @@ public class UiTimer : MonoBehaviour
         var ratio = remainingTime / GameManager.Instance.GameTime;
         
         var padding = _rectMask2D.padding;
-        padding.z = _rectMask2D.rectTransform.rect.width * ratio;
+        padding.z = _rectMask2D.rectTransform.rect.width * (1f - ratio);
         _rectMask2D.padding = padding;
         // _text.text = $"time remain: {remainingTime:F1}";
     }
