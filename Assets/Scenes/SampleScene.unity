@@ -630,6 +630,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8683274341940859451, guid: 31ee4ce071ed1425caf98d03559c3be7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6085482143807239411}
+    - target: {fileID: 8683274341940859451, guid: 31ee4ce071ed1425caf98d03559c3be7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8743436075081454163, guid: 31ee4ce071ed1425caf98d03559c3be7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
